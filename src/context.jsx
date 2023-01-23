@@ -8,22 +8,14 @@ const AppContext = React.createContext()
 
 const AppProvider = ({children}) => {
 
-    const [notes, setNotes] = useState([
-        {
-        id: 1,
-        title: "Dummy Note",
-        text: "this is my dummy text. ",
-        date: '1.1.2022'
-        },
+    const [notes, setNotes] = useState(['test'])
 
-        
-    ])
-
-    
     const[selectedNote, setSelectedNote] = useState([]);
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
+
+    const [test, setTest] = useState('');
 
     const handleTitleChange = (event)=> {
         setTitle(event.target.value)
@@ -34,23 +26,22 @@ const AppProvider = ({children}) => {
     }
 
 
-
-    // const edit_note= (id)=> {
-    //     let note;
-    //     note = notes.find((item)=> item.id == id)
-    
-    //     setSelectedNote(note);
-
-    //     console.log("selected note: "+selectedNote);
-    //     console.log('note: '+note)
-    
-    //     const modal = document.getElementById('edit-modal-overlay');
-    //     modal.style.display = "grid";
-    
-    // }
-
-
     var clicked_note = null;
+
+    useEffect(()=> {
+        // const saved_notes = JSON.parse(localStorage.getItem('NOTES'));
+        // setNotes(saved_notes);
+    },[]);
+
+
+
+
+    useEffect(() => {
+        // localStorage.setItem('NOTES', JSON.stringify(notes))
+
+        console.log("notes have been stored to local storage.")
+        console.log("notes have been updated")
+      }, [test ]); // Only re-run the effect if count changes
 
 
 

@@ -18,8 +18,8 @@ function Notes() {
     setSelectedNote(note);
     
 
-    console.log("selected note: "+selectedNote.id);
-    console.log('note: '+note.id)
+    // console.log("selected note: "+selectedNote.id);
+    // console.log('note: '+note.id)
 
 
     const modal = document.getElementById('edit-modal-overlay');
